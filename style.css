@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-.container {
+.mainContainer {
     background: white;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -23,7 +23,7 @@ body {
     width: 100%;
 }
 
-.header {
+.headerContainer {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 60px 40px;
@@ -53,15 +53,15 @@ body {
     font-size: 60px;
 }
 
-.content {
+.bodyContainer {
     padding: 40px;
 }
 
-.section {
+.openSection {
     margin-bottom: 30px;
 }
 
-.section h2 {
+.openSection h2 {
     color: #667eea;
     font-size: 1.8em;
     margin-bottom: 15px;
@@ -71,9 +71,7 @@ body {
 
 .about-text {
     color: #333;
-    line-height: 1.8;
     font-size: 1.05em;
-    margin-bottom: 15px;
 }
 
 .skills-grid {
@@ -99,13 +97,10 @@ body {
 
 .contact-info {
     background: #f8f9fa;
-    padding: 20px;
     border-radius: 10px;
-    margin-top: 15px;
 }
 
 .contact-item {
-    margin: 10px 0;
     color: #333;
 }
 
