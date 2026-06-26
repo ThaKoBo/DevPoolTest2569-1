@@ -14,16 +14,24 @@
 
         <div class="webContainer">
 
-            <div class="headerContainer">
+            <div class="headerContainer1">
                 <div class="profile-pic">
                 👤
                 </div>
+                <div class="weatherContainer">
+                    <h2>กรุงเทพมหานคร</h2>                    
+                    <p id="weather-display">
+                        กำลังโหลดข้อมูลอากาศ...
+                    </p>
+                </div>
+            </div>    
+            <div class="headerContainer2">
                 <h1>
                     DevPoolTest#1
                 </h1>
                 <p class="subtitle">
                     เนื้อหาสำหรับสอบเข้า DevPoolTest#1 เท่านั้น
-                </p>
+               </p>                                    
             </div>
     
             <div class="bodyContainer">
@@ -62,22 +70,22 @@
                         สิ่งที่ทำได้
                     </h2>
                     <div class="skills-grid">
-                        <div class="skill-item">
+                        <div class="skill-item" data-hover="เบื้องต้น">
                             HTML & CSS
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-hover="เบื้องต้น">
                             JavaScript
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-hover="เบื้องต้น">
                             Web Design
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-hover="เบื้องต้น">
                             Problem Solving
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-hover="เบื้องต้น">
                             Responsive Design
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-hover="เบื้องต้น">
                             UI/UX
                         </div>
                     </div>
@@ -168,11 +176,33 @@
         </div>
     
         <script>
-            // Toggle extra info visibility
+
+            async function getWeather() {
+                const lat = 13.75;
+                const lon = 100.50;
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
+
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    const temp = data.current.temperature_2m;
+
+                    document.getElementById('weather-display').innerText = `อุณหภูมิ: ${temp}°C`;
+                }
+                
+                catch (error) {
+                    console.error("ดึงข้อมูลอากาศพลาด:", error);
+                }
+            }
+
+            getWeather();
+
             document.getElementById('toggleBtn').addEventListener('click', function(){
                 const info = document.getElementById('extraInfo');
                 info.classList.toggle('show');
             });
+
+
         </script>
     </body>
 </html>

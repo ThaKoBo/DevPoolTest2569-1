@@ -23,10 +23,18 @@ body {
     width: 100%;
 }
 
-.headerContainer {
+.headerContainer1 {
+    display: flex;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 60px 40px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.headerContainer2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 10px;
     text-align: center;
 }
 
@@ -57,6 +65,24 @@ body {
     padding: 40px;
 }
 
+.weatherContainer {
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.weatherContainer h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.weatherContainer p {
+    font-size: 1.1em;
+    color: #333;
+}
+
 .openSection {
     margin-bottom: 30px;
 }
@@ -84,15 +110,27 @@ body {
 .skill-item {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;   
     border-radius: 10px;
     text-align: center;
     font-weight: 600;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
+    background-color: white;
+    font-size: 0;
+}
+
+.skill-item:hover::before {
+    font-size: 16px;
+    content: attr(data-hover);
+    display: overwrite;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
 }
 
 .contact-info {
